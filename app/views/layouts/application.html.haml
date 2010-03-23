@@ -11,6 +11,9 @@
     = yield(:head)
   
   %body
+    #header
+      %h1
+        = link_to "Gestion des gardes", root_path
     #container
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"

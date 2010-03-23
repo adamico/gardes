@@ -13,13 +13,22 @@ a {
   height: 0;
   overflow: hidden; }
 
+#header {
+  background: #000;
+  color: #fff;
+  width: 75%;
+  margin: 0 auto;
+  padding: 10px 40px; }
+  #header a {
+    color: inherit;
+    text-decoration: none; }
+
 #container {
   width: 75%;
   margin: 0 auto;
   background: #fff;
   padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px; }
+  border: solid 1px black; }
 
 #flash_notice,
 #flash_error {
