@@ -1,0 +1,17 @@
+- title "Gardes"
+
+%table
+  %tr
+    %th Quand
+    %th Avec
+    %th Payee
+  - for garde in @gardes
+    %tr
+      %td= h garde.quand
+      %td= h garde.avec
+      %td= h garde.payee
+      %td= link_to 'Show', garde
+      %td= link_to 'Edit', edit_garde_path(garde)
+      %td= link_to 'Destroy', garde, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Garde", new_garde_path
