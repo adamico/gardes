@@ -8,9 +8,10 @@
   - for garde in @gardes
     %tr
       %td= link_to h(garde.quand), garde
-      %td= "#{garde.medecins_initiales}" rescue ""
+      %td= "#{garde.medecins_initiales}"
       %td= h garde.est_payee?
       %td= link_to 'Edit', edit_garde_path(garde)
       %td= link_to 'Destroy', garde, :confirm => 'Are you sure?', :method => :delete
 
 %p= link_to "New Garde", new_garde_path
+%p= link_to "Check Google Synchronisation", synchro_path

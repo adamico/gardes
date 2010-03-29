@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :medecins, :gardes, :synchronisations
-  map.do_synchro 'do_synchro', :controller => 'synchronisations', :action => 'do_synchro'
+  map.resources :medecins, :gardes
+  map.do_synchro 'synchro', :controller => 'gardes', :action => 'synchro'
   map.root :controller => 'welcome', :action => 'index'
 end
