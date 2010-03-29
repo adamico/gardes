@@ -13,8 +13,8 @@ class Garde < ActiveRecord::Base
 
   # custom methods
   def medecins_initiales
-    s_abbrev = senior.abbrev rescue ""
-    j_abbrev = junior.abbrev rescue ""
+    s_abbrev = senior.abbrev rescue "##"
+    j_abbrev = junior.abbrev rescue "##"
     "#{s_abbrev} / #{j_abbrev}"
   end
 

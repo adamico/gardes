@@ -23,6 +23,37 @@ describe Garde do
       end
     end
   end
+  describe "#medecins_initiales" do
+    before(:each) do
+      @garde.quand = Time.now.to_date
+      @garde.save
+      @garde.build_assignment
+      @senior = Medecin.create(:name => "valueforname", :abbrev => "SS")
+      @junior = Medecin.create(:name => "valueforname", :abbrev => "JJ")
+    end
+    context "when senior and junior are not blank" do
+      it "should print 'senior.abbrev / junior.abbrev'" do
+        @garde.assignment.senior = @senior
+        @garde.assignment.junior = @junior
+        @garde.assignment.save
+        @garde.medecins_initiales.should == "SS / JJ"
+      end
+    end
+    context "when junior is blank" do
+      it "should print 'senior.abbrev / ##'" do
+        @garde.assignment.senior = @senior
+        @garde.assignment.save
+        @garde.medecins_initiales.should == "SS / ##"
+      end
+    end
+    context "when senior is blank" do
+      it "should print '## / junior.abbrev '" do
+        @garde.assignment.junior = @junior
+        @garde.assignment.save
+        @garde.medecins_initiales.should == "## / JJ"
+      end
+    end
+  end
 end
 
 

@@ -2,12 +2,10 @@
 
 one:
   quand: 2010-03-23
-  avec: MyString
   payee: false
 
 two:
   quand: 2010-03-23
-  avec: MyString
   payee: false
 
 
