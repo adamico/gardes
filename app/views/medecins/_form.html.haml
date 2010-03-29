@@ -1,0 +1,6 @@
+- semantic_form_for @medecin do |f|
+  - f.inputs do
+    = f.input :name, :label => "Nom et Prénom"
+    = f.input :abbrev, :label => "Initiales"
+    = f.input :senior, :label => "Senior?"
+    = f.commit_button "Enregistrer"

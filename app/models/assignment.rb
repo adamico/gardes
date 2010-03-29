@@ -2,7 +2,13 @@ class Assignment < ActiveRecord::Base
   belongs_to :junior, :class_name => 'Medecin'
   belongs_to :senior, :class_name => 'Medecin'
   belongs_to :garde
+
+  def medecin_ids
+    [ senior_id, junior_id]
+  end
 end
+
+
 
 # == Schema Information
 #

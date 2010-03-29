@@ -1,0 +1,16 @@
+- title "Medecins"
+
+%table
+  %tr
+    %th Nom
+    %th Abbrev
+    %th Senior?
+  - for medecin in @medecins
+    %tr
+      %td= link_to h(medecin.name), medecin
+      %td= h medecin.abbrev
+      %td= h medecin.senior
+      %td= link_to 'Edit', edit_medecin_path(medecin)
+      %td= link_to 'Destroy', medecin, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Medecin", new_medecin_path

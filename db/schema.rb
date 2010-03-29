@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100329072440) do
+ActiveRecord::Schema.define(:version => 20100329085447) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "senior_id"
@@ -21,8 +21,7 @@ ActiveRecord::Schema.define(:version => 20100329072440) do
 
   create_table "gardes", :force => true do |t|
     t.date     "quand"
-    t.string   "avec"
-    t.boolean  "payee"
+    t.boolean  "payee",      :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "gcal_id"

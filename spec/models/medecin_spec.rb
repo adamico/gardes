@@ -12,6 +12,8 @@ describe Medecin do
   end
 end
 
+
+
 # == Schema Information
 #
 # Table name: medecins

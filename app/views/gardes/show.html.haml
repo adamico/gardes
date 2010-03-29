@@ -1,7 +1,7 @@
 - title "Garde du #{@garde.quand}"
 %p
-  %strong Avec:
-  =h @garde.avec
+  %strong Médecins:
+  = "#{@garde.senior.abbrev} / #{@garde.junior.abbrev}" rescue ""
 %p
   %strong Payee?:
   =h @garde.est_payee?

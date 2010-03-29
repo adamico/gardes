@@ -3,12 +3,12 @@
 %table
   %tr
     %th Quand
-    %th Avec
+    %th Medecins
     %th Payee
   - for garde in @gardes
     %tr
       %td= link_to h(garde.quand), garde
-      %td= h garde.avec
+      %td= "#{garde.medecins_initiales}" rescue ""
       %td= h garde.est_payee?
       %td= link_to 'Edit', edit_garde_path(garde)
       %td= link_to 'Destroy', garde, :confirm => 'Are you sure?', :method => :delete

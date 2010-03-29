@@ -1,6 +1,16 @@
+- @garde.build_assignment unless @garde.assignment
+
 - semantic_form_for @garde do |f|
   - f.inputs do
     = f.input :quand
-    = f.input :avec
     = f.input :payee
+  - f.semantic_fields_for :assignment do |assignment|
+    - assignment.inputs do
+      %li.select
+        = assignment.label :senior_id, "Senior"
+        = assignment.collection_select :senior_id, Medecin.senior, :id, :abbrev, :include_blank => true
+      %li.select
+        = assignment.label :junior_id, "Junior"
+        = assignment.collection_select :junior_id, Medecin.junior, :id, :abbrev, :include_blank => true
+  - f.inputs do
     = f.commit_button "Submit"

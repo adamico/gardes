@@ -1,0 +1,21 @@
+- title "#{h(@medecin.name)}"
+%p
+  %strong Abbrev:
+  =h @medecin.abbrev
+%p
+  %strong Senior:
+  =h @medecin.senior
+
+- if !@medecin.gardes.blank?
+  %h2 Liste des gardes
+  - for garde in @medecin.gardes
+    = "#{link_to h(garde.quand), garde} : #{garde.medecins_initiales}"
+- else
+  Pas de Gardes pour ce médecin
+
+%p
+  = link_to "Edit", edit_medecin_path(@medecin)
+  |
+  = link_to "Destroy", @medecin, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", medecins_path
