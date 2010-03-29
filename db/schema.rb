@@ -9,12 +9,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100323180727) do
+ActiveRecord::Schema.define(:version => 20100329072440) do
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "senior_id"
+    t.integer  "junior_id"
+    t.integer  "garde_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "gardes", :force => true do |t|
     t.date     "quand"
     t.string   "avec"
     t.boolean  "payee"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "gcal_id"
+  end
+
+  create_table "medecins", :force => true do |t|
+    t.string   "name"
+    t.string   "abbrev"
+    t.boolean  "senior"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

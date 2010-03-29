@@ -9,3 +9,21 @@ two:
   quand: 2010-03-23
   avec: MyString
   payee: false
+
+
+
+
+
+# == Schema Information
+#
+# Table name: gardes
+#
+#  id         :integer         not null, primary key
+#  quand      :date
+#  avec       :string(255)
+#  payee      :boolean
+#  created_at :datetime
+#  updated_at :datetime
+#  gcal_id    :string(255)
+#
+

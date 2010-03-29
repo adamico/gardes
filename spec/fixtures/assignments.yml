@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  senior_id: 1
+  junior_id: 1
+  garde_id: 1
+
+two:
+  senior_id: 1
+  junior_id: 1
+  garde_id: 1
+
+# == Schema Information
+#
+# Table name: assignments
+#
+#  id         :integer         not null, primary key
+#  senior_id  :integer
+#  junior_id  :integer
+#  garde_id   :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+

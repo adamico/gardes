@@ -24,3 +24,21 @@ describe Garde do
     end
   end
 end
+
+
+
+
+
+# == Schema Information
+#
+# Table name: gardes
+#
+#  id         :integer         not null, primary key
+#  quand      :date
+#  avec       :string(255)
+#  payee      :boolean
+#  created_at :datetime
+#  updated_at :datetime
+#  gcal_id    :string(255)
+#
+
