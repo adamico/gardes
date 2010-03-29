@@ -1,0 +1,2 @@
+class SynchronisationsController < ApplicationController
+end
