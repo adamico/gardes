@@ -6,17 +6,11 @@ class Garde < ActiveRecord::Base
   validates_uniqueness_of :quand
 
   # associations
-  has_many :assignments, :dependent => :destroy
-  has_many :medecins, :through => :assignments do
-    def senior
-      find :first, :conditions => { :senior => true }
-    end
-    def junior
-      find :first, :conditions => { :senior => false }
-    end
-  end
+  has_one :assignment, :dependent => :destroy
+  delegate :senior, :junior, :to => :assignment
 
   # custom methods
+
   def est_payee?
     if self.payee?
       "oui"
